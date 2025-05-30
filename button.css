@@ -1,0 +1,40 @@
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    height:100vh;
+    align-items:center;
+    background-color:burlywood;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn{
+    background-color:rgb(20, 185, 89);
+    padding:20px 40px;
+    border-radius:15px;
+    box-shadow:0 4px 5px 2px;
+    text-decoration: none;
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+.btn span{
+    position:relative;
+    z-index:1;
+}
+.btn::before{
+    content:"";
+    position:absolute;
+    background-color:rgb(245, 14, 176);
+    width:0;
+    height:0;
+    left:var(--xPos);
+    top:var(--yPos);
+    transform:translate(-50%,-50%);
+    border-radius:90%;
+    transition: width 0.5s, height 0.5s;
+} 
+
+.btn:hover::before{
+    width:200px;
+    height:200px;
+}
